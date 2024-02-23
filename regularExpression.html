@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo"> Please visit The school </p>
+    <button onclick="replacee()"> REPLACE </button> 
+    <button onclick="searchh()"> Search </button>
+    <button onclick="search_position()"> Position </button>
+    <div id="display"></div> <div id="display2">  </div> <div id="display3"></div> <div id="display4"></div>
+    
+    <script>
+
+        function replacee()
+        {
+            let text = demo.innerHTML
+            display.innerHTML = text.replace("school", "SCHOOL"); 
+            demo.innerHTML = text.replace("school", "SCHOOL")
+            display2.innerHTML = text.replace(/schooL/i, "COLLEGE");  //case insensitive
+        }
+
+        function searchh()
+        {
+            let text = demo.innerHTML;
+            display3.innerHTML = /P/.test(text); //search weather p is in  the sentence or not
+        }
+
+        function search_position()
+        {
+            let obj = /s/.exec(demo.innerHTML) //finding letter e in  the sentence
+            display4.innerHTML = "Found " + obj + " in position " + obj.index + " in the text " + " ' " + demo.innerHTML + "'"
+        }
+
+
+
+
+    </script>
+</body>
+</html>

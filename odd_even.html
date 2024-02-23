@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even & Odd Number Checking System</title>
+</head>
+<body>
+    <center style="border: brown solid 1px;" >
+        <h1 style="color:brown;"> <b> NUMBER CHECKING SYSTEM</b></h1>
+        <h1> Check for even or odd number</h1> 
+        <input type="number" placeholder="enter a number" id="userInput">
+        
+        <button onclick="checkNumber()"> check</button>
+        
+        <div id="display"></div>
+        <br>
+    </center>
+    
+    <script>
+        function checkNumber()  
+        {
+            var inp = Number(userInput.value); 
+            if (inp%2==0  )
+            {display.innerHTML=" Even Number"}
+            // document.getElementById("demo").innerHTML = 5 + 2 ;
+    
+          else if (inp%2==1)
+          //{display.innerHTML = " Odd Number"}
+           {document.getElementById("display").innerHTML = "odd Number"} ;
+        
+        }
+    </script>
+
+</body>
+</html>

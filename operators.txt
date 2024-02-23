@@ -1,0 +1,18 @@
+OPERATORS IN JAVASCRIPTS
+
+= Assignment operator
+== Equal to (checks for the value only) i.e console.log(2==2)
+=== exactly equals to (checks for the value and datatypes) i.e console.log('2'===2)
++ Addition/Concatination 
+- subtraction
+* multiplication
+/ division
+** Raise to the power
+++ Increament
+-- Decrement
+> greater than
+< less than
+>= greater than or equal to
+<= less than or equal to
+!= not equal to
+% = (modulus) returns remainder afer dividing two numbers

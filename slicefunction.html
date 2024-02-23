@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function slicee(string, start, stop)
+        {
+            if (start > string.length || start > stop || isNaN(start))
+                {consol.log("invalid start format")}
+
+
+            var newString = " "
+
+            for (i = start; i<stop; i++)
+            {newString +=string[i]}
+             
+            return newString
+        }
+        console.log (slicee("Hello World", 2, 7) );
+    </script>
+</body>
+</html>

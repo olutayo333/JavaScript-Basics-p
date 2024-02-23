@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display"> 0 </div>
+    <button onclick="auto()"> increase</button> <button onclick="stopp()"> stop</button>
+    <script>
+        let count = 0; let set;
+
+
+        setInterval(()=>{let date = new Date();
+        console.log(date.toUTCString())}, 1000)
+        
+        function dattee()
+        {
+            
+        }
+
+
+
+
+
+
+        function increase()
+        {
+            //count++
+            display.innerHTML = count++
+        }
+
+        function auto()
+        {
+           set =  setInterval (increase, 1000)
+        }
+
+        function stopp()
+        { 
+            clearInterval(set)
+        }
+    </script>
+</body>
+</html>

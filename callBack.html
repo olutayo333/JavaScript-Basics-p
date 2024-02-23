@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // console.log("i")
+        // console.log("i")
+        // console.log("i")
+        // console.log("i")
+        // console.log("i")
+        // setTimeout(()=>{console.log("after 2 second")}, 2000)
+        // console.log("i")
+
+        // function one()
+        // {{
+        //     //do somethinh
+        // }
+
+        // function two( call_one)
+        // {
+        //     //do somethimg else
+        //     call_one
+        // }
+        // }
+
+
+
+
+        //CALLBACK FUNCTIONS
+        let stocks = { fruits:["strawberry", "grapes", "banana", "apple"], 
+                        liquid:["water", "ice"],
+                        holder:["cone", "cup", "stick"],
+                        toppings:["chocolate", "peanuts"]
+                        } //user[index].name
+                        //console.log(stocks.fruits[0]);
+
+        const order = (call_production, fruitName)=>
+        {
+            call_production()
+            setTimeout(()=>console.log(`${stocks.fruits[fruitName]} was selected`), 2000);
+        }
+
+        const production = ()=>
+        {
+            setTimeout( ()=>{ console.log(`production has started`); 
+            setTimeout(()=>{console.log("the fruit has been choped");
+            setTimeout(()=>{console.log(`${stocks.liquid[1]} and ${stocks.liquid[1]} are added`);
+            setTimeout(()=>{console.log("Machine is started");
+            setTimeout(()=>{console.log("container selected");
+            setTimeout(()=>{console.log("Select toppings");
+            setTimeout(()=>{console.log( `Serve ${stocks.fruits[0]} `);
+        }, 2000)
+        }, 2000)
+        }, 2000)
+        }, 2000)
+        }, 2000)
+        }, 2000)
+        }, 2000)
+            
+        }
+        order(production, "0"); //Passing argument into the parametized function
+    
+
+        
+        
+    </script>
+</body>
+</html>

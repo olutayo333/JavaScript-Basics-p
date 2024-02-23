@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="attendance()"> TAKE ATTENDANCE </button>
+    <button onclick="gymAdmission()"> GYM ADMISSION </button>
+    <button onclick="while_Loop_Attendance()"> WHILE LOOP ATTENDANCE</button>
+    <button onclick="raiseTo()"> RAISE TO </button>
+    <button onclick="rolldice()"> Roll Dice</button>
+    <div id="display"> </div>
+    <div id="display2"> </div>
+    
+    <script>
+        let totalWorkers = 6;
+        //let totalWorkers = [ "stephen", "colins", "john"];
+        let presentWorkers = 0;
+        let absentWorkers = 0;
+
+       function attendance()
+       {
+            for(let i = totalWorkers; i<=totalWorkers.length; i++)
+            { let isPresent = prompt(`is worker ${i} present today('Yes or No')`)
+            
+                isPresent = isPresent.toLocaleLowerCase();
+
+                if (isPresent === 'yes'){ presentWorkers ++}
+                else if (isPresent==='no') { absentWorkers ++}
+
+                display.innerHTML = `Total Number of Present Workers is ${presentWorkers}`  
+                display2.innerHTML = ` Total Number of absent workers is ${absentWorkers} `
+    
+            }
+       }
+
+        function gymAdmission()
+        {
+            let gymMembers = [];
+            const maxMembers = 102;
+            
+            for(let member = 100; member <= maxMembers; member++)
+            { let memberName = prompt(` Enter your NAME, gym number ${member}`)
+                let memberAge = prompt( `Enter your AGE, gym number ${member}`)
+
+                if (memberAge<=40 && memberAge  > 15) 
+                {
+                    console.log( `Name: ${memberName}, Age: ${memberAge} you are admitted to our Gym` )
+                }
+                else if (memberAge > 40 || memberAge <= 15  )
+                {
+                    console.log(`${memberName}, Age: ${memberAge} you are not admitted to our gym center because you are too old or too young`)
+                }
+            }
+        }
+
+        function while_Loop_Attendance()
+        {   let j = 1
+            while( j<=totalWorkers ) 
+            {
+                let isPresent = prompt(`is workers ${j} present today('yes or no')`)
+                isPresent = isPresent.toLowerCase()
+
+                if (isPresent === 'yes') { presentWorkers ++}
+               else if (isPresent === 'no') { absentWorkers ++}
+
+               display.innerHTML = `Total Number of Present Workers is ${presentWorkers}`  
+                display2.innerHTML = ` Total Number of absent workers is ${absentWorkers} `
+                
+            }
+            i++
+        }
+
+        let count = 5;
+        while (count >0)
+        {
+            console.log(count)
+            count--
+        }
+
+        
+        function raiseTo()
+        {
+            let a = 2
+            while ( a<=64)
+            {
+                console.log(a);
+                a*=2 //a = a*2
+            }
+           // a++
+        }
+
+        function rolldice()
+    {
+        let dice = Math.trunc(Math.random()*6) + 1
+
+        while (dice !== 6)
+        {   
+            console.log (` you rolled ${dice}`) 
+            dice = Math.trunc(Math.random()*6) + 1
+            
+            if (dice === 6)
+            {console.log(` you rolle ${dice} `)}
+        }
+    }
+    </script>
+</body>
+</html>

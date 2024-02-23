@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Constructors</title>
+</head>
+<body>
+    
+    <script>
+
+        class Human{
+            constructor(complextion, name){  //functions we to execute for every object are put inside the constructor
+                this.complextion = complextion;
+                this.name = name;
+            }
+            speak(){
+                alert("Hello," +  this.name + "i am speaking" )
+            }
+        }
+       
+        var ibrahim = new Human("Light", "Ibrahim");
+        ibrahim.speak();
+
+        var tayo = new Human("dark", "favour");
+        tayo.speak();
+
+        //inheritance , adding more functions for super humans alone
+        class SuperHuman extends Human
+        {   
+            constructor (complextion, name, speed){
+               super(complextion, name)
+               this.speed = speed; 
+            }
+            walk(){ alert ("I am walking!")}
+        }
+
+    var superIbrahim = new SuperHuman ("dark", "Super Ibrahim", "500km/s")
+    superIbrahim.speak();
+
+    //ACESS SPECIFIER
+        // public function : works anywhere 
+        // private function: it only works inside the human class(Parent Class)
+        // protected function: works only in human class(PARENT CLASS) and classes that extends it
+        // STATIC function :  cannot be modified
+    </script>
+</body>
+</html>

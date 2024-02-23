@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> TIMER <code id="timeSpan"> 100 </code> </h1>
+    <!-- <input type="number" placeholder=" enter time" id="timeSpan"> -->
+    
+    <button onclick="callCount()"> CountDown</button>
+    <button onclick=" stopCount()"> Stop Count</button>
+    <button onclick="callTimeout()"> Call Timeout </button>
+    <button onclick="increaseStopWatch()"> START STOPWATCH </button>
+    <button onclick="stopWatchCounting()"> STOP COUNTING </button>
+    <div> <p id="displayMinutes"> </p> <small id="displaySeconds"> </small> </div>
+
+    
+    <script>
+        var timer; var seconds = 0;  var stop; var minutes=0;
+
+        function callCount()
+        { timer = setInterval(countDown, 1000) }
+
+        function countDown() 
+        {   let value = timeSpan.innerHTML;
+            value -= 1;
+            timeSpan.innerHTML = value;
+        }
+
+        function stopCount()
+        { clearInterval(timer);  }
+
+       function stopWatch()
+        {   if (seconds < 60) {
+           seconds ++; displaySeconds.innerHTML= seconds 
+        } //(seconds=60) {displayMinutes.innerHTML=minute++}
+            // {
+            //     //if (seconds < 60  )
+            //     {displaySeconds.innerHTML = seconds}
+            //     //else {} 
+            
+            // }
+             
+        }
+        function minute () { if (minutes < 60) { displayMinutes.innerHTML = minutes++ } else{} }
+       
+       function increaseStopWatch()
+       { stop = setInterval(stopWatch, 1000);  setInterval(minute, 60000)}
+
+       function stopWatchCounting() { clearInterval( stop) }
+
+
+        function callTimeout()
+        { setTimeout(execute, 60000) }
+
+        function execute()
+        { alert("THIS IS COMING UP AFTER 5 SECONDS")}
+
+    </script>
+</body>
+</html>
+for (i=1; i<=20; i++)
+{
+    if      (i % 5 == 0 && i % 3 == 0 ) {console.log("FizzBuzz");}
+    else if ( i % 5 == 0) {console.log("Buzz")}
+    else if ( i % 3 == 0 ) {console.log("Fizz");}
+    else {console.log(i);}
+    
+}

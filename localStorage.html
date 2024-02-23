@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getBudget()" >
+    <div class="container">
+        <div class="row">
+            <div class="col-12 p-3" style="border-bottom: 1px solid lightgrey;">  <h1> Grocery !</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class=" row mt-3">
+                    <div class="col-9">
+                        <input id="budgetInput" type="number" class="form-control" placeholder="Enter Budget">
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-danger" onclick="saveBudget()"> Save Budget</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <p> Save Budget <span id="budgetDisplay"> </span> </p>
+                </div>
+
+                <div class="row" style="height: 50vh;">
+                    <div class="col-12" id="groceryBox">
+
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="col-9 ">
+                        <input id="itemInput" type="text" class="form-control" placeholder="Enter Item">
+                        <input id="amountInput" type="number" class="form-control" placeholder="Enter Amount">
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-danger" onclick="saveItem()"> Save Item </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var budget = 0; var itemArr = [];
+
+        const getBudget = () =>
+        {
+            budget = localStorage.getItem('budget') ;
+            document.getElementById('budgetDisplay').innerHTML= budget
+           
+            if (localStorage.getItem('grocery_list'))
+            {itemArr = JSON.parse(localStorage.getItem('grocery_list'));
+            displayItem(); }
+        }
+
+        const saveBudget = () => 
+        {
+           budget = document.getElementById('budgetInput').value;
+           document.getElementById('budgetDisplay').innerHTML = budget
+            
+            localStorage.setItem("budget", JSON.stringify(budget));
+            //displayItem();
+        }
+
+        const saveItem =() =>
+        {
+            let item = document.getElementById('itemInput').value;
+            let amount = document.getElementById('amountInput').value;
+            let obj = {name:item, amount:amount};
+            itemArr.push(obj);
+
+            localStorage.setItem('grocery_list', JSON.stringify(itemArr));
+            displayItem();
+        }
+
+        const displayItem = () => 
+        {  
+            let content = "";
+            itemArr.map(i =>{
+                content += `<div class=" w-100 p-2 mb-1 shadow bg-success text-white"> ${i.name} <span style="float:right">#${i.amount} <span>`
+                document.getElementById('groceryBox').innerHTML = content;
+            })
+
+            // itemArr.map(i =>{ content += ` <div> ${i.name} ${i.amount} </div>` 
+            // document.getElementById('groceryBox').innerHTML = content}).join(' ')
+            // //document.getElementById('groceryBox').innerHTML = ` ${name} ${amount} `
+    }
+    </script>
+</body>
+</html> 

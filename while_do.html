@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="whileloop()"> WHILE LOOP </button>
+    <button onclick="doWhileLoop()"> DO WHILE LOOP </button>    
+    <script>
+
+        let attemptNo = 0
+        let count = 2
+
+        function whileloop()
+        {
+             let password = "admin"        
+        
+            while (1) 
+              //while (password != "admin" && attemptNo <= 3)
+            {   attemptNo++
+                 count --
+                let attempt  = prompt("enter password")
+
+                 if (attempt != password && attemptNo <=3 ) {alert(` you have entered wrong password, you have ${count + 1} attempt left`) }
+                else if (attempt != password && attemptNo > 2 ) {alert(` Incorrect password, you have exceeded the total attemp limit`) ; break }
+                 else if (attempt === password ) {alert (`SUCCESS you have entered th correct password`); break}
+             }
+        }
+    
+
+        
+        
+        function doWhileLoop()
+        {
+           let userPass; 
+           let correctPass = "admin" ;
+           
+           //if (userPass === correctPass ) {   alert(`LOGIN SUCCESSFUL`);  } 
+
+ 
+            do {      
+                attemptNo++; count--
+                userPass = prompt('enter correct password');
+                alert(`login Unsuccessfully, you have ${count + 1} attempt(s) left`) 
+                }    
+            while (userPass !== correctPass && attemptNo <=2 );
+
+
+            do { attemptNo++ ;   count-- ;
+                 alert(`Max Attempt Reached `); break; }
+            while ( attemptNo > 2 );
+
+             
+            do {alert("LOGIN SUCCESSFUL"); break}
+                while (userPass === correctPass)
+            
+            
+
+            //if (userPass !==correctPass && attemptNo > 2) { alert(`Max Attempt Reached`) }
+
+            //if (userPass!== correctPass && attemptNo)
+            //{alert(`login Unsuccessfully, you have ${count + 1} attempt(s) left`)} 
+
+            //if (userPass !==correctPass && attemptNo > 2) { alert(`Max Attempt Reached`) }
+            
+           // else if (userPass === correctPass){alert (` SUCCESSFULLY LOGIN`); }
+            }
+
+    </script>
+</body>
+</html>

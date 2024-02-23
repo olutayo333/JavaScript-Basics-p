@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callabck</title>
+</head>
+<body onload="geoLocation()">
+    <div class="row" id="mapBox"> </div> <img src="" alt="">
+    
+    <script>
+        function geoLocation()
+        {
+            if (navigator.geolocation)
+            { navigator.geolocation.getCurrentPosition(showPosition, showError) }//getCurrentPosition= static or watchPosition= changes as the user change position
+            else {alert ("Geolocation is not surpported by this browser")}
+        }
+        function showPosition(position)
+        {   
+            let latlon = `${position.coords.latitude},${position.coords.longitude}`; console.log(latlon);
+            let imgUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${latlon}&zoom=14&size=400x300&key=AIzaSyDW_chvh6A2HNoUJO22XIUJJQUl_6gdcCU` //AIzaSyCzQTTselnR_-Cb-5MY0z8XOxu_6OveZIw
+            document.getElementById("mapBox").innerHTML = `<img src = "${imgUrl}"s>`
+        }
+        function showError()
+        {
+            alert("Unable to diplay location at the moment")
+        }
+    </script>
+</body>
+</html>

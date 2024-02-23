@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display"></div>
+    <script>
+        obj = { firstname: "Olutayo", lastname:"stephen", age: 29,   }
+        //delete obj.age
+        display.innerHTML = obj.firstname + obj.age
+        var val = Object.values(obj); //converts the object to am array and shows all the properties of an object
+        console.log(val.forEach((value)=>console.log(value)))
+
+        var keys = Object.keys(obj)
+       keys.forEach(for_each) 
+      // keys.forEach (value => { if (obj[value] === 29) { console.log(value);}
+        //})
+
+        function for_each(value) 
+        {
+            if (obj[value] === 29) {console.log(value);}
+        }
+
+        var obj2 = { mango: 4, apple: 9, orange: 5, pawpaw:2}
+
+        var container = Object.keys(obj2)
+        console.log(container)
+       container.filter(now0)
+        // container.filter(value2 => {
+         //   if(obj2[value2] < 5 ) { console.log(value2 + ' ' + 'is now 0')}
+        //})
+
+        function now0(value2, index) 
+        { 
+            if (obj2[value2] < 5) 
+            { console.log(value2 + " " + ' is now 0')} 
+        }
+
+    </script>
+</body>
+</html>

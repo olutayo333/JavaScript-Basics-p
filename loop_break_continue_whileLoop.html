@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="number1"> 
+    <input type="number" id="number2"> 
+    <div id="display"> </div>  <div id="display2"> </div>
+    <script>
+        var i;
+        for(i=1; i<=10; i++) 
+        {
+             if (i%2 ==0) {continue;}
+            console.log(i)
+        }
+
+        for (let j =1; j<=10; j++)
+        {if (j%5 == 0) {break;} console.log(j)}
+
+       //WHILE LOOP
+       var k = 1;
+       while (k < 5) {console.log(k); k++; }
+
+       //DO WHILE LOOP
+
+       //do{console.log(k); k++}
+       //while(k<=5)
+        
+        
+        
+        
+        
+        var sum = calculate(2, 5)
+        display.innerHTML=sum
+
+        function calculate(a,b)
+        {
+            let ans = a + b;
+            return ans;
+        }
+    </script>
+</body>
+</html>

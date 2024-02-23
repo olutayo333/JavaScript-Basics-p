@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cars()"> CARS </button> <button onclick="number()"> NUMBERS </button>
+    <button onclick="fizzbuzz()"> FizzBuzz </button>
+    <div id="display1"> </div> <div id="display2"> </div> <div id="display3"> </div> <div id="display4"> </div>
+    <script>
+        var j;
+        for(i=1; j<=10; j++) 
+        {
+             if (j%2 ==0) {continue;}
+            }
+
+       // function fizzbuzz()
+           
+            for (i=1; i<=20; i++)
+            {
+                if      (i % 5 == 0 && i % 3 == 0 ) {console.log("FizzBuzz");}
+                else if ( i % 5 == 0) {console.log("Buzz")}
+                else if ( i % 3 == 0 ) {console.log("Fizz");}
+                else {console.log(i);}
+                
+            }
+        
+
+        function cars()
+        {
+            let i, text = " " ;
+            const cars = ["BMW", "volvo", "saab", "ford", "fiat", "audi"];
+            for ( i = 0; i< cars.length; i++)
+            {text = text + cars[i] + "<br>";}
+
+            display.innerHTML= text;
+        }
+
+        function number()
+        {
+            let text=" ", i ;
+            for ( i = 0; i < 5; i++ )
+            { text = text + i + "<br>"}
+            display.innerHTML =`  ${text}`
+        }
+
+    </script>
+</body>
+</html>

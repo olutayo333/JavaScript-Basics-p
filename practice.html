@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p id="display" ></p>
+   <button type="button" onclick="document.write(5+5)"> Try It </button>
+   <button type="button" onclick="window.print()"> Print This Page </button>
+   <button onclick="add()"> add</button>
+   <button onclick="arr()"> cars</button>
+   <div  id="showCars"> </div> 
+   <button onclick="obj()"> Car Details</button>
+   <button onclick=" this.innerHTML = toCelsius(77)"> CElcius</button>
+   
+   <input type="text" id="fname" placeholder="fname">
+   <input type="text" id="lname" placeholder="lname">
+   <input type="number" id="age" placeholder="age">
+   <button onclick="person()" >Person</button>
+   <div id="display2"></div>
+
+   <input type="text" id="stext" placeholder="Text String">
+   <button onclick="stringLength()"> String Length</button>
+
+    <input type="number" id="pNumber" placeholder="Phone Number">
+    <button onclick="numberCheck()"> Phone Number</button>
+
+    <label> Type Please Olutayo SCHOOL</label>
+    <input type="text" id="tArea" placeholder="PLEASE TYPE OLUTAYO SCHOOL"> 
+    <button onclick="replacement()">SUBMIT</button>
+
+    <div id="display3"> </div>
+   <button onclick="split()"> Split</button>
+  
+  <script>
+        //document.getElementById("display").innerHTML = 5 + 2 ;
+        function add (){
+        var x,y,z ;
+        x=5; y=1; z=x+y;
+        display.innerHTML = z;
+        }
+
+        function arr()
+        {
+            const cars = ["Sabb", "Toyota", "MAtrix", "BMW", "Volvo"];
+            cars[1] = "Corolla";
+            cars.push ("Audi")
+            showCars.innerHTML = cars;
+        }
+
+        function obj()
+        {
+            const cars = {type:"fiat", model:"500", color:"white" };
+            cars.color="red"; //changing the property of the object
+            cars.owner="Stephen"; //adding property to the object
+            cars.name="Toyota"; //adding property to an object
+            display.innerHTML="Details of the car is " + cars.owner;
+
+        }
+
+        function toCelsius(f)
+        {
+            return(5/9) * (f-32); 
+        }
+      // display.innerHTML = toCelsius(77)
+
+      function person()
+      {
+       let person = {firstname:fname.value, lastname:lname.value, years:Number(age.value) };
+       display2.innerHTML= "FIRST NAME:" + person.firstname+"LAST NAME:"+""+person.lastname+""+"AGE:"+ person.years 
+      }
+
+      function stringLength()
+      {
+        var text= stext.value;
+        display2.innerHTML= text.length;
+      }
+
+      // Phone Number length checking
+      function numberCheck()
+      {
+        var num = pNumber.value;
+        //var leng = num.length; 
+        if (num.length < 11) { display2.innerHTML = "NUmber not up to 11 digit" + " " + num.slice(1,4) + "....." 
+                                 + num.substring(1,4) + "...." + num.replace("e")
+                            }
+
+        else if (num.length > 11) {display2.innerHTML ="Number more than 11 digit"}
+        else if(num.length == 11) { display2.innerHTML="11 digit \"CORRECT\"".concat()}
+      }
+
+      function replacement()
+      {
+        let t = tArea.value;
+        display2.innerHTML = t.replace(/SCHOOL/i, `COLLEGE`.concat(`school changed to college`))
+         display.innerHTML= t.trim();   
+      }
+
+      function split()
+      {
+        let text = tArea.value;
+        const myArray = text.split(" ")
+        display3.innerHTML = myArray[0] 
+      }
+
+      function interpolation()
+      {
+        var name=`Stephen`; var sex="male"
+        display3.innerHTML = ` welcome  <ul><h1>${name}</h1>, ${sex} </ul>` 
+      }
+    
+      function to_string()
+    {
+      var num = Number(number2.value);
+      display3.innerHTML = tostring(num);
+    }
+
+    function numbermethod()
+    { let x = Number(nummth.value);
+      display3.innerHTML=(x.toPrecision(2));
+      display2.innerHTML=(x.toFixed(2));
+    }
+    </script>
+    <input type="number" id="nummth" placeholder="enter number">
+    <button onclick="numbermethod()"> Round Up </button>
+
+    <button onclick="interpolation()"> interpolation</button>
+    <input type="number" id="number2">
+    <button onclick="to_string(36)"> toString</button>
+    
+</body>
+</html>

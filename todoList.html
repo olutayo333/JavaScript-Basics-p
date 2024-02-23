@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var todoListItems = [];
+        var a
+        while ( 1) 
+        {
+        var start = prompt("What do you want to do m? \n1. Add to todo list\n2.Remove list\n3.View Todo List\n4.Exit")
+
+        if (start ==1 )
+            {addToList()}
+        else if (start ==2)
+            { removeFromList() }
+        else if (start == 3)
+            {viewTodoList()}
+        else if (start ==4)
+            { break; }
+        else {alert("Wrong Command")}
+        }
+
+        function addToList()
+        {
+            var item = prompt("Enter todo Activity");
+            todoListItems.push(item);
+            console.log(todoListItems);
+        }
+
+        function removeFromList()
+        {
+            var item = prompt("which activities do you want to remove from" + " " + todoListItems);
+           todoListItems = todoListItems.filter((value, index) =>  value  !== item );
+          //todoListItems = todoListItems.filter((value) => {while (value !== item) continue} );
+           
+            console.log(todoListItems);
+        }
+
+        function viewTodoList()
+        {
+            var list = " ";
+           
+            todoListItems.forEach((value, index) => (list += index + 1 + " . " + value + "\n") )
+           // todoListItems.forEach((listItem, idx) => (list +=  ` ${idx + 1} `
+           // ` ${todoListItems.forEach(())}`
+            alert(list)
+        }
+
+        
+    </script>
+</body>
+</html>

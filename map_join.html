@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display"> </div>
+    
+    <script>
+        const products = 
+        [
+            {
+                id:1, name: "bed", price:"20000", description: "Mouka foam"
+            },
+
+            {
+                id:2, name: "phone", price:"60000", description: "Tecno"
+            },
+
+            {
+                id:3, name: "Television", price:"80000", description: "LG"
+            }
+        ]
+
+        const productsItems = products.map((value => ` 
+        <li>${value.name}</li>
+        <li>${value.price}</li>
+        <li>${value.description}</li> `))
+
+        console.log(productsItems.join(" "))
+        
+    </script>
+</body>
+</html>

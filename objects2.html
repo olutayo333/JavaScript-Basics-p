@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var students = { 
+                            name: "favour", 
+                            gender:"male", 
+                            age: 30, 
+                            country: "Nigeria", 
+                            speak: function(){ alert(`My Name is ${ this.name}`)} 
+                        }
+
+            var person1 = {name:"Tolu", gender: "Male" }; // Object 1
+            var person2 = {name:"Tola", gender: "Female"}; // Objects 2
+            var persons = [ person1, person2];  //Array  of objects
+            console.log(persons);  //  Displaying all the Properties of objects inside eethe Array
+
+            console.log(person1.name); //displaying from the object
+
+            console.log( ` Mr  ${persons[0].name} is a ${persons[0].gender} `)  //displaying from the array of objects
+            
+            for (var i = 0; i<persons.length; i++)
+                        { console.log(persons[i].name) }
+    </script>
+</body>
+</html>
